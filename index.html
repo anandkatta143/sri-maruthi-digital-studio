@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sri Maruthi Digital Studio</title>
+
+<meta name="description"
+content="Sri Maruthi Digital Studio – Wedding Photography, Cinematography, Kids Photography, Maternity, Portraits and Premium Albums.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+:root{
+    --gold:#d6b36a;
+    --white:#ffffff;
+    --muted:#aaa;
+    --dark:#080808;
+    --card:#111111;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:20px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.75),
+        transparent
+    );
+}
+
+.logo{
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    min-height:650px;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    padding:8%;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at 70% 35%,#493d2a 0%,transparent 35%),
+    linear-gradient(135deg,#171717,#050505 70%);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.15)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.small-title{
+    color:var(--gold);
+    letter-spacing:5px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(48px,9vw,125px);
+    line-height:.9;
+    letter-spacing:-5px;
+}
+
+.hero h1 span{
+    color:transparent;
+    -webkit-text-stroke:1px #fff;
+}
+
+.hero p{
+    margin-top:30px;
+    color:#ccc;
+    max-width:550px;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 25px;
+    border:1px solid rgba(255,255,255,.4);
+    color:#fff;
+    text-decoration:none;
+    margin-right:10px;
+    font-size:12px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.btn.gold{
+    background:var(--gold);
+    color:#000;
+    border-color:var(--gold);
+}
+
+/* SECTION */
+
+section{
+    padding:120px 6%;
+}
+
+.section-label{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:11px;
+    margin-bottom:20px;
+}
+
+.section-title{
+    font-size:clamp(38px,6vw,80px);
+    line-height:1;
+    max-width:850px;
+    letter-spacing:-3px;
+}
+
+.intro{
+    max-width:650px;
+    margin-top:30px;
+    color:#aaa;
+    line-height:1.9;
+}
+
+/* CINEMATIC PHOTO PLACEHOLDER */
+
+.photo{
+    min-height:80vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    padding:7%;
+    background:
+    radial-gradient(circle at 25% 30%,#806d4b 0%,transparent 20%),
+    radial-gradient(circle at 80% 70%,#302820 0%,transparent 35%),
+    linear-gradient(135deg,#191919,#050505);
+}
+
+.photo::after{
+    content:"PHOTO PLACEHOLDER";
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:clamp(20px,4vw,55px);
+    letter-spacing:8px;
+    color:rgba(255,255,255,.12);
+}
+
+.photo-content{
+    position:relative;
+    z-index:2;
+}
+
+.photo-number{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:4px;
+}
+
+/* PACKAGE */
+
+.package{
+    background:#0d0d0d;
+}
+
+.package-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+    align-items:center;
+}
+
+.package h3{
+    font-size:clamp(35px,5vw,65px);
+    margin-bottom:25px;
+}
+
+.package-description{
+    color:#aaa;
+    line-height:1.9;
+    max-width:600px;
+}
+
+.features{
+    margin-top:30px;
+    list-style:none;
+}
+
+.features li{
+    padding:12px 0;
+    border-bottom:1px solid #292929;
+    color:#ddd;
+}
+
+.features li::before{
+    content:"✦";
+    color:var(--gold);
+    margin-right:12px;
+}
+
+.price-card{
+    background:#151515;
+    padding:45px;
+    border:1px solid #292929;
+}
+
+.price-label{
+    color:#888;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.price{
+    font-size:50px;
+    margin:15px 0 30px;
+    color:var(--gold);
+}
+
+.price-note{
+    color:#777;
+    font-size:12px;
+    margin-bottom:25px;
+}
+
+/* SERVICES */
+
+.services{
+    background:#070707;
+}
+
+.service-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.service{
+    padding:40px 30px;
+    min-height:210px;
+    background:#111;
+    border:1px solid #202020;
+    transition:.4s;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+}
+
+.service span{
+    color:#555;
+    font-size:12px;
+}
+
+.service h3{
+    margin-top:30px;
+    font-size:24px;
+}
+
+.service p{
+    color:#888;
+    margin-top:15px;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* ABOUT */
+
+.about{
+    background:#101010;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.about-box{
+    min-height:450px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle,#51442f,#171717 60%,#080808);
+}
+
+.about-box strong{
+    font-size:80px;
+    color:rgba(255,255,255,.08);
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    background:#050505;
+}
+
+.contact h2{
+    font-size:clamp(45px,8vw,100px);
+    letter-spacing:-4px;
+}
+
+.contact p{
+    color:#999;
+    margin:25px auto 40px;
+    max-width:550px;
+    line-height:1.8;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+footer{
+    padding:35px 6%;
+    border-top:1px solid #222;
+    display:flex;
+    justify-content:space-between;
+    color:#666;
+    font-size:12px;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:2000;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 5px 25px rgba(0,0,0,.5);
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    nav{
+        padding:18px 5%;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    .hero{
+        min-height:700px;
+        padding:8% 6%;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .photo{
+        min-height:70vh;
+        padding:10% 6%;
+    }
+
+    .package-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .price-card{
+        padding:30px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+/* REVEAL ANIMATION */
+
+.reveal{
+    animation:fadeUp 1s ease both;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+    <div class="logo">
+        SRI <span>MARUTHI</span>
+    </div>
+
+    <div class="links">
+        <a href="#work">WORK</a>
+        <a href="#services">SERVICES</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content reveal">
+
+        <div class="small-title">
+            PHOTOGRAPHY • FILMS • MEMORIES
+        </div>
+
+        <h1>
+            SRI MARUTHI<br>
+            <span>DIGITAL STUDIO</span>
+        </h1>
+
+        <p>
+            We capture real emotions, beautiful celebrations
+            and timeless memories through photography and films.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#work" class="btn gold">
+                EXPLORE WORK
+            </a>
+
+            <a href="#contact" class="btn">
+                CONTACT US
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- INTRO -->
+
+<section id="work">
+
+    <div class="section-label">
+        01 — THE EXPERIENCE
+    </div>
+
+    <h2 class="section-title">
+        Every frame tells<br>
+        a different story.
+    </h2>
+
+    <p class="intro">
+        From intimate portraits to grand celebrations,
+        Sri Maruthi Digital Studio creates photographs and
+        cinematic films designed to preserve your most
+        important moments.
+    </p>
+
+</section>
+
+
+<!-- PHOTO 01 -->
+
+<div class="photo">
+
+    <div class="photo-content">
+
+        <div class="photo-number">
+            01 / WEDDING
+        </div>
+
+        <h2 class="section-title">
+            Wedding Stories
+        </h2>
+
+    </div>
+
+</div>
+
+
+<!-- PACKAGE 01 -->
+
+<section class="package">
+
+    <div class="section-label">
+        WEDDING PHOTOGRAPHY
+    </div>
+
+    <div class="package-grid">
+
+        <div>
+
+            <h3>
+                Wedding<br>
+                Photography
+            </h3>
+
+            <p class="package-description">
+                Beautiful candid moments, traditional portraits,
+                family photographs and creative couple portraits
+                captured with a cinematic approach.
+            </p>
+
+            <ul class="features">
+                <li>Candid Photography</li>
+                <li>Traditional Photography</li>
+                <li>Couple Portraits</li>
+                <li>Family & Friends Coverage</li>
+                <li>Professional Editing</li>
+            </ul>
+
+        </div>
+
+        <div class="price-card">
+
+            <div class="price-label">
+                PACKAGE PRICE
+            </div>
+
+            <div class="price">
+                ₹ ——
+            </div>
+
+            <div class="price-note">
+                Price can be updated later.
+            </div>
+
+            <a href="#contact" class="btn gold">
+                ENQUIRE NOW
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTO 02 -->
+
+<div class="photo">
+
+    <div class="photo-content">
+
+        <div class="photo-number">
+            02 / CINEMATOGRAPHY
+        </div>
+
+        <h2 class="section-title">
+            Cinematic Films
+        </h2>
+
+    </div>
+
+</div>
+
+
+<!-- PACKAGE 02 -->
+
+<section class="package">
+
+    <div class="section-label">
+        WEDDING CINEMATOGRAPHY
+    </div>
+
+    <div class="package-grid">
+
+        <div>
+
+            <h3>
+                Wedding<br>
+                Cinematography
+            </h3>
+
+            <p class="package-description">
+                Cinematic wedding films crafted around your
+                emotions, celebrations, people and unforgettable
+                moments.
+            </p>
+
+            <ul class="features">
+                <li>Cinematic Wedding Film</li>
+                <li>Creative Couple Shots</li>
+                <li>Event Highlights</li>
+                <li>Professional Color Grading</li>
+                <li>Highlight Video</li>
+            </ul>
+
+        </div>
+
+        <div class="price-card">
+
+            <div class="price-label">
+                PACKAGE PRICE
+            </div>
+
+            <div class="price">
+                ₹ ——
+            </div>
+
+            <div class="price-note">
+                Price can be updated later.
+            </div>
+
+            <a href="#contact" class="btn gold">
+                ENQUIRE NOW
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTO 03 -->
+
+<div class="photo">
+
+    <div class="photo-content">
+
+        <div class="photo-number">
+            03 / KIDS
+        </div>
+
+        <h2 class="section-title">
+            Little Moments
+        </h2>
+
+    </div>
+
+</div>
+
+
+<!-- PACKAGE 03 -->
+
+<section class="package">
+
+    <div class="section-label">
+        KIDS PHOTOGRAPHY
+    </div>
+
+    <div class="package-grid">
+
+        <div>
+
+            <h3>
+                Kids<br>
+                Photography
+            </h3>
+
+            <p class="package-description">
+                Creative portraits and joyful expressions
+                captured in colourful and memorable setups.
+            </p>
+
+            <ul class="features">
+                <li>Creative Themes</li>
+                <li>Birthday Portraits</li>
+                <li>Baby Photography</li>
+                <li>Creative Studio Portraits</li>
+                <li>Professional Editing</li>
+            </ul>
+
+        </div>
+
+        <div class="price-card">
+
+            <div class="price-label">
+                PACKAGE PRICE
+            </div>
+
+            <div class="price">
+                ₹ ——
+            </div>
+
+            <div class="price-note">
+                Price can be updated later.
+            </div>
+
+            <a href="#contact" class="btn gold">
+                ENQUIRE NOW
+            </a>
+
+        </div>
+
+  </div>
